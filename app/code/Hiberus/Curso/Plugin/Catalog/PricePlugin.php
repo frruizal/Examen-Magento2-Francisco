@@ -13,7 +13,7 @@ class PricePlugin
 public function afterGetDisplayValue(\Magento\Framework\Pricing\Render\Amount $subject, $result)
 {
     $ud = '/ud';
-    
-return $result. getDisplayValue(escapeHtmlAttr($ud));
+
+return $result. $ud;
 }
 }
