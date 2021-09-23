@@ -1,2 +1,17 @@
 <?php
-echo "hola";
+/**
+ * @var \Hiberus\Ruizalejos\Block\Index $block
+ */
+$alumnos=$block->getAlumno();
+?>
+<h2 class="tittle">Lista de alumnos</h2>
+<?php
+    foreach($alumnos as $al){ ?>
+
+<ul>
+    <li>Name: <?= $al->getFirstName();?></li>
+    <li>Surname: <?= $al->getLastName();?></li>
+    <li>Mark <?= $al->getMark();?></li>
+</ul>
+<?php } ?>
+<p>Total number of students: <?= (count($alumnos)) ?></p>

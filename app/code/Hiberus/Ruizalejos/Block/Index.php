@@ -26,7 +26,7 @@ class Index extends \Magento\Framework\View\Element\Template
     ) {
         $this->registry = $registry;
         $this->examen = $examen;
-      //  $this->examenRepository = $examenRepository;
+        $this->examenRepository = $examenRepository;
         $this->examenInterfaceFactory = $examenInterfaceFactory;
         $this->examenResource = $examenResource;
         parent::__construct($context, $data);
