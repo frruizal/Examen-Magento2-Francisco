@@ -1,4 +1,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Hiberus\Ruizalejos\Model\Examen">
+        <plugin name="nota_suspensa" type="Hiberus\Ruizalejos\Plugin\Examen\NotaSuspensa" sortOrder="10"  />
+    </type>
     <preference for="Hiberus\Ruizalejos\Api\Data\ExamenInterface" type="Hiberus\Ruizalejos\Model\Examen"/>
     <preference for="Hiberus\Ruizalejos\Api\ExamenRepositoryInterface" type="Hiberus\Ruizalejos\Model\ExamenRepository"/>
     <type name="Magento\Framework\EntityManager\MetadataPool">

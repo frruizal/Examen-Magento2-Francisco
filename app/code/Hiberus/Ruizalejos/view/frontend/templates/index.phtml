@@ -15,6 +15,6 @@ $suma=0;
     <li>Mark <?= $al->getMark();?></li>
 
 </ul>
-<?php $suma= $suma+$al->getMark(); } ?>
+<?php $suma+=$al->getMark(); } ?>
 <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
 <p>Total number of students: <?= (count($alumnos)) ?></p>
