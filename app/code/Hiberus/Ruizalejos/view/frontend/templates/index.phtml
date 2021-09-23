@@ -3,8 +3,9 @@
  * @var \Hiberus\Ruizalejos\Block\Index $block
  */
 $alumnos=$block->getAlumno();
+$suma=0;
 ?>
-<h2 class="tittle">Lista de alumnos</h2>
+<h2 class="tittle">Students' List</h2>
 <?php
     foreach($alumnos as $al){ ?>
 
@@ -12,6 +13,8 @@ $alumnos=$block->getAlumno();
     <li>Name: <?= $al->getFirstName();?></li>
     <li>Surname: <?= $al->getLastName();?></li>
     <li>Mark <?= $al->getMark();?></li>
+
 </ul>
-<?php } ?>
+<?php $suma= $suma+$al->getMark(); } ?>
+<p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
 <p>Total number of students: <?= (count($alumnos)) ?></p>
