@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <preference for="Hiberus\Ruizalejos\Api\Data\ExamenInterface" type="Hiberus\Ruizalejos\Model\Examen"/>
+    <preference for="Hiberus\Ruizalejos\Api\ExamenRepositoryInterface" type="Hiberus\Ruizalejos\Model\ExamenRepository"/>
+    <type name="Magento\Framework\EntityManager\MetadataPool">
+        <arguments>
+            <argument name="metadata" xsi:type="array">
+                <item name="Hiberus\Ruizalejos\Api\Data\ExamenInterface" xsi:type="array">
+                    <item name="entityTableName" xsi:type="const">Hiberus\Ruizalejos\Api\Data\ExamenInterface::TABLE_NAME</item>
+                    <item name="identifierField" xsi:type="const">Hiberus\Ruizalejos\Api\Data\ExamenInterface::COLUMN_ID</item>
+                </item>
+            </argument>
+        </arguments>
+    </type>
+
+</config>
