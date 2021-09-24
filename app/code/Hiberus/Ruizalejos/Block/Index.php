@@ -70,4 +70,25 @@ class Index extends \Magento\Framework\View\Element\Template
         return $alumno->getEntityId();
 
     }*/
+
+    public function max3notas($max1,$max2,$max3){
+        $alumnos=$this->getAlumno();
+
+        foreach($alumnos as $al) {
+            //en este if calculo las 3 maximas notas
+            if ($al->getMark() > $max1) {
+                $max2 = $max1;
+                $max1 = $al->getMark();
+            } else {
+                if ($al->getMark() > $max2) {
+                    $max3 = $max2;
+                    $max2 = $al->getMark();
+                } else {
+                    if ($al->getMark() > $max3) {
+                        $max3 = $al->getMark();
+                    }
+                }
+            }
+        }
+    }
 }

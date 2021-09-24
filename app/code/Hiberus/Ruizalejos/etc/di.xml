@@ -4,6 +4,13 @@
     </type>
     <preference for="Hiberus\Ruizalejos\Api\Data\ExamenInterface" type="Hiberus\Ruizalejos\Model\Examen"/>
     <preference for="Hiberus\Ruizalejos\Api\ExamenRepositoryInterface" type="Hiberus\Ruizalejos\Model\ExamenRepository"/>
+    <!--type name="Magento\Framework\Console\CommandListInterface">
+        <arguments>
+            <argument name="commands" xsi:type="array">
+                <item name="comando_ruizalejos" xsi:type="object">Hiberus\Ruizalejos\Console\RuizalejosCommand</item>
+            </argument>
+        </arguments>
+    </type> -->
     <type name="Magento\Framework\EntityManager\MetadataPool">
         <arguments>
             <argument name="metadata" xsi:type="array">

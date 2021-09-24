@@ -14,7 +14,7 @@ $elem = $block->getElements();
 ?>
 <h2 class="title">Students' List</h2>
 <?php
-    foreach($alumnos as $al) {
+     foreach($alumnos as $al) {
         //en este if calculo las 3 maximas notas
         if ($al->getMark() > $max1) {
             $max2 = $max1;
@@ -33,7 +33,7 @@ $elem = $block->getElements();
     }
 
 
-
+    //$block->max3notas($max1=0,$max2=0,$max3=0);
     foreach( $alumnos as $alu) {
         if($alu->getMark() == $max1 || $alu->getMark() == $max2 ||  $alu->getMark() == $max3 ) {
         ?>
