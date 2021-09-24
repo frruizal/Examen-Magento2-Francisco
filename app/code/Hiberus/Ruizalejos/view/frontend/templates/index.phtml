@@ -51,7 +51,18 @@ $elem = $block->getElements();
 ?>
 <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
 <p>Total number of students: <?= (count($alumnos)) ?></p>
+<button id="notaAlta">Mostrar la nota mas alta</button>
 <p><?=$max1 ?></p>
 <p><?=$max2 ?></p>
 <p><?=$max3 ?></p>
+
+
+<script>
+    var max1= <?= $max1?>
+</script>
+                <script>
+                    require(['jquery', 'notaAlta'], function($, notaAlta) {
+                        notaAlta('#notaAlta');
+                    });
+                </script>
 
