@@ -9,7 +9,7 @@ $suma=0;
 <?php
     foreach($alumnos as $al){ ?>
 
-<ul>
+<ul class="<?php if($al->getMark()<5){ ?> suspendido <?php } else { ?> aprobado <?php }?>">
     <li>Name: <?= $al->getFirstName();?></li>
     <li>Surname: <?= $al->getLastName();?></li>
     <li>Mark <?= $al->getMark();?></li>

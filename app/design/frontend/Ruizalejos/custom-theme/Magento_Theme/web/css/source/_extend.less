@@ -6,13 +6,19 @@
     }
 
     .title{
-        color:red;
+        color:lightblue;
     }
 
     ul {
         list-style-type: none;
     }
 
+    .aprobado {
+        .examenColor(green);
+    }
+    .suspendido {
+        .examenColor(red);
+    }
 }
 
 .media-width(@extremum,@break) when (@extremum='min') and (@break=@screen__m){
