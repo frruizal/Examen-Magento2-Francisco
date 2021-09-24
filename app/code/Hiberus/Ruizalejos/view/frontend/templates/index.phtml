@@ -8,7 +8,9 @@ $max1=0;
 $max2=0;
 $max3=0;
 
-$notasAlumnos=[];
+$i=0;
+$notaMin = $block->getNota();
+$elem = $block->getElements();
 ?>
 <h2 class="title">Students' List</h2>
 <?php
@@ -27,6 +29,7 @@ $notasAlumnos=[];
                 }
             }
         }
+        //if ($i++ == $elem) break;
     }
 
 
@@ -34,15 +37,18 @@ $notasAlumnos=[];
     foreach( $alumnos as $alu) {
         if($alu->getMark() == $max1 || $alu->getMark() == $max2 ||  $alu->getMark() == $max3 ) {
         ?>
-            <ul class="<?php if($alu->getMark()<5){ ?> susptop <?php } else { ?> aprobtop <?php }?>top">
+            <ul class="<?php if($alu->getMark()<$notaMin){ ?> susptop <?php } else { ?> aprobtop <?php }?>top">
         <?php } else {?>
-            <ul class="<?php if($alu->getMark()<5){ ?> suspendido <?php } else { ?> aprobado <?php }?>">
+            <ul class="<?php if($alu->getMark()<$notaMin){ ?> suspendido <?php } else { ?> aprobado <?php }?>">
                 <?php } ?>
                 <li>Name: <?= $alu->getFirstName();?></li>
                 <li>Surname: <?= $alu->getLastName();?></li>
                 <li>Mark <?= $alu->getMark();?></li>
             </ul>
-<?php $suma+=$alu->getMark(); } ?>
+<?php $suma+=$alu->getMark();
+        //if ($i++ == $elem) break;
+}
+?>
 <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
 <p>Total number of students: <?= (count($alumnos)) ?></p>
 <p><?=$max1 ?></p>

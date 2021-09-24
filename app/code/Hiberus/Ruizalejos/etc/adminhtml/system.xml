@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="campos" sortOrder="999" translate="label">
+            <label>Ruizalejos</label>
+        </tab>
+        <section id="campos_nombre" showInDefault="1" sortOrder="10">
+            <label>Insertar Configuracion</label>
+            <tab>campos</tab>
+            <resource>Hiberus_Ruizalejos::config</resource>
+            <group id="general" showInDefault="1" sortOrder="10">
+                <label>Campos</label>
+                <field id="campos_elementos" type="text" showInDefault="1" sortOrder="10">
+
+                    <label>Numero de elementos</label>
+                    <validate>validate-number</validate>
+                </field>
+
+                <field id="nota_elementos" type="text" showInDefault="1" sortOrder="10">
+
+                    <label>Nota aprobado </label>
+                    <validate>validate-number</validate>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
+

@@ -5,6 +5,8 @@ namespace Hiberus\Ruizalejos\Block;
 use Hiberus\Ruizalejos\Api\ExamenRepositoryInterface;
 use Hiberus\Ruizalejos\Model\Examen;
 use Hiberus\Ruizalejos\Api\Data\ExamenInterfaceFactory;
+use Magento\Framework\App\Config\ScopeConfigInterface;
+use Magento\Store\Model\ScopeInterface;
 
 
 class Index extends \Magento\Framework\View\Element\Template
@@ -22,6 +24,7 @@ class Index extends \Magento\Framework\View\Element\Template
         ExamenRepositoryInterface $examenRepository,
         ExamenInterfaceFactory $examenInterfaceFactory,
         \Hiberus\Ruizalejos\Model\ResourceModel\Examen $examenResource,
+        ScopeConfigInterface $scopeConfig,
         array $data = []
     ) {
         $this->registry = $registry;
@@ -29,6 +32,7 @@ class Index extends \Magento\Framework\View\Element\Template
         $this->examenRepository = $examenRepository;
         $this->examenInterfaceFactory = $examenInterfaceFactory;
         $this->examenResource = $examenResource;
+        $this->scopeConfig= $scopeConfig;
         parent::__construct($context, $data);
     }
 
@@ -41,6 +45,18 @@ class Index extends \Magento\Framework\View\Element\Template
         //return $this->examenRepository->getById($crearAlumno);
         return $crearAlumno->getCollection();
 
+    }
+
+    public function getElements(){
+        $elements = $this->scopeConfig->getValue('campos_nombre/general/campos_elementos',ScopeInterface::SCOPE_STORE);
+        return $elements;
+    }
+
+
+    public function getNota(){
+        $nota = $this->scopeConfig->getValue('campos_nombre/general/nota_elementos',ScopeInterface::SCOPE_STORE);
+
+        return $nota;
     }
 
     /*public function insertAlumno($firstname, $surname, $mark) {
