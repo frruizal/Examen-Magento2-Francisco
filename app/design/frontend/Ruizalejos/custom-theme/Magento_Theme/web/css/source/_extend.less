@@ -1,0 +1,22 @@
+@margin-left-primary: 20px;
+
+& when(@media-common = true) {
+    ul:nth-child(even) {
+        margin-left: @margin-left-primary;
+    }
+
+    .title{
+        color:red;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+}
+
+.media-width(@extremum,@break) when (@extremum='min') and (@break=@screen__m){
+    .title{
+        color:blue;
+    }
+}
