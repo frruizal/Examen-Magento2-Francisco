@@ -42,10 +42,10 @@ $elem = $block->getElements();
         //si es una de las 3 maximas notas
         if($alu->getMark() == $max1 || $alu->getMark() == $max2 ||  $alu->getMark() == $max3 ) {
         ?>
-            //clase especial para las 3 mejores notas
+            <!-- clase especial para las 3 mejores notas -->
             <ul class="<?php if($alu->getMark()<$notaMin){ ?> susptop <?php } else { ?> aprobtop <?php }?>top">
         <?php } else {?>
-            //clase normal para el resto que no tengan las 3 mejores notas
+            <!-- clase normal para el resto que no tengan las 3 mejores notas -->
             <ul class="<?php if($alu->getMark()<$notaMin){ ?> suspendido <?php } else { ?> aprobado <?php }?>">
                 <?php } ?>
                 <li>Name: <?= $alu->getFirstName();?></li>
@@ -53,12 +53,12 @@ $elem = $block->getElements();
                 <li>Mark <?= $alu->getMark();?></li>
             </ul>
             
-        //En este trozo calculo la suma        
+        <!--En este trozo calculo la suma -->   
         <?php $suma+=$alu->getMark();
                 //if ($i++ == $elem) break;
         } ?>
         
-        //Obtengo la media 
+        <!--Obtengo la media -->
         <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
         <p>Total number of students: <?= (count($alumnos)) ?></p>
         <button id="notaAlta">Mostrar la nota mas alta</button>
