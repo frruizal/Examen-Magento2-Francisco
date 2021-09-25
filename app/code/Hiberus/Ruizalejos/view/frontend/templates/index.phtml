@@ -3,6 +3,7 @@
  * @var \Hiberus\Ruizalejos\Block\Index $block
  */
 $alumnos=$block->getAlumno();
+
 $suma=0;
 $max1=0;
 $max2=0;
@@ -12,7 +13,8 @@ $i=0;
 $notaMin = $block->getNota();
 $elem = $block->getElements();
 ?>
-<h2 class="title">Students' List</h2>
+
+//Script que calcula las 3 mejores notas de la clase
 <?php
      foreach($alumnos as $al) {
         //en este if calculo las 3 maximas notas
@@ -31,38 +33,46 @@ $elem = $block->getElements();
         }
         //if ($i++ == $elem) break;
     }
+?>
 
+<h2 class="title">Students' List</h2>
 
-    //$block->max3notas($max1=0,$max2=0,$max3=0);
+<?php
     foreach( $alumnos as $alu) {
+        //si es una de las 3 maximas notas
         if($alu->getMark() == $max1 || $alu->getMark() == $max2 ||  $alu->getMark() == $max3 ) {
         ?>
+            //clase especial para las 3 mejores notas
             <ul class="<?php if($alu->getMark()<$notaMin){ ?> susptop <?php } else { ?> aprobtop <?php }?>top">
         <?php } else {?>
+            //clase normal para el resto que no tengan las 3 mejores notas
             <ul class="<?php if($alu->getMark()<$notaMin){ ?> suspendido <?php } else { ?> aprobado <?php }?>">
                 <?php } ?>
                 <li>Name: <?= $alu->getFirstName();?></li>
                 <li>Surname: <?= $alu->getLastName();?></li>
                 <li>Mark <?= $alu->getMark();?></li>
             </ul>
-<?php $suma+=$alu->getMark();
-        //if ($i++ == $elem) break;
-}
-?>
-<p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
-<p>Total number of students: <?= (count($alumnos)) ?></p>
-<button id="notaAlta">Mostrar la nota mas alta</button>
-<p><?=$max1 ?></p>
-<p><?=$max2 ?></p>
-<p><?=$max3 ?></p>
+            
+        //En este trozo calculo la suma        
+        <?php $suma+=$alu->getMark();
+                //if ($i++ == $elem) break;
+        } ?>
+        
+        //Obtengo la media 
+        <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
+        <p>Total number of students: <?= (count($alumnos)) ?></p>
+        <button id="notaAlta">Mostrar la nota mas alta</button>
+        <p><?=$max1 ?></p>
+        <p><?=$max2 ?></p>
+        <p><?=$max3 ?></p>
 
 
 <script>
     var max1= <?= $max1?>
 </script>
-                <script>
-                    require(['jquery', 'notaAlta'], function($, notaAlta) {
-                        notaAlta('#notaAlta');
-                    });
-                </script>
+<script>
+    require(['jquery', 'notaAlta'], function($, notaAlta) {
+        notaAlta('#notaAlta');
+    });
+</script>
 
