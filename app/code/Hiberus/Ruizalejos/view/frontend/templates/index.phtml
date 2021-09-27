@@ -52,15 +52,16 @@ $elem = $block->getElements();
                 <li>Surname: <?= $alu->getLastName();?></li>
                 <li>Mark <?= $alu->getMark();?></li>
             </ul>
-            
-        <!--En este trozo calculo la suma -->   
+
+        <!--En este trozo calculo la suma -->
         <?php $suma+=$alu->getMark();
                 //if ($i++ == $elem) break;
         } ?>
-        
+
         <!--Obtengo la media -->
         <p>Average of Marks <?= $suma/(count($alumnos)) ?></p>
-        <p>Total number of students: <?= (count($alumnos)) ?></p>
+        <p><?= __('Total number of students') ?> <?= (count($alumnos)) ?></p>
+
         <button id="notaAlta">Mostrar la nota mas alta</button>
         <p><?=$max1 ?></p>
         <p><?=$max2 ?></p>

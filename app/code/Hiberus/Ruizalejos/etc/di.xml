@@ -7,7 +7,7 @@
     <type name="Magento\Framework\Console\CommandListInterface">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="comando_ruizalejos" xsi:type="object">Hiberus\Ruizalejos\Console\RuizalejosCommand</item>
+                <item name="comando_autor" xsi:type="object">Hiberus\Ruizalejos\Console\RuizalejosCommand</item>
             </argument>
         </arguments>
     </type>

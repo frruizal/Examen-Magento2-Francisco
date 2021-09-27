@@ -11,16 +11,12 @@ class RuizalejosCommand extends Command
 {
 
     /**
-     * @var Index
-     */
-     protected Index $index;
-
-    /**
      * @param Index $index;
      */
-    public function __construct(Index $index)
+    public function __construct(//Index $index
+    )
     {
-        $this->index = $index;
+       //$this->index = $index;
         parent::__construct();
 
     }
@@ -38,12 +34,12 @@ class RuizalejosCommand extends Command
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $alumnos = $this->index->getAlumno();
+        /*$alumnos = $this->index->getAlumno();
         foreach ($alumnos as $al) {
             $output->writeln('<info> Nombre ' . $al->getFirstname() . 'Apellido' . $al->getLastname() . 'Nota' . $al->getMark() .'</info>');
-        }
+        }*/
+        $output->writeln('<info> Nombre Apellido Nota </info>');
 
 
     }
 }
-

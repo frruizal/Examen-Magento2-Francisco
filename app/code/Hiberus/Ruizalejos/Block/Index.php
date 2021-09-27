@@ -5,6 +5,7 @@ namespace Hiberus\Ruizalejos\Block;
 use Hiberus\Ruizalejos\Api\ExamenRepositoryInterface;
 use Hiberus\Ruizalejos\Model\Examen;
 use Hiberus\Ruizalejos\Api\Data\ExamenInterfaceFactory;
+use Hiberus\Ruizalejos\Api\Data\ExamenInterface;
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Store\Model\ScopeInterface;
 
